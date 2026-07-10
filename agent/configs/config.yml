@@ -1,0 +1,39 @@
+functions:
+  diagnosis_tool:
+    _type: diagnosis_tool
+    n_examples: 5
+
+  training_monitor_tool:
+    _type: training_monitor_tool
+
+  evaluation_tool:
+    _type: evaluation_tool
+    n_examples: 5
+
+  decision_tool:
+    _type: decision_tool
+
+  training_trigger_tool:
+    _type: training_trigger_tool
+
+  deployment_tool:
+    _type: deployment_tool
+
+llms:
+  groq_llm:
+    _type: litellm
+    model_name: groq/llama-3.3-70b-versatile
+
+workflow:
+  _type: react_agent
+  llm_name: groq_llm
+  tool_names:
+    - diagnosis_tool
+    - training_monitor_tool
+    - evaluation_tool
+    - decision_tool
+    - training_trigger_tool
+    - deployment_tool
+  verbose: true
+  max_iterations: 15
+  parse_agent_response_max_retries: 3

@@ -1,0 +1,16 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools >= 64"]
+
+[project]
+name = "agentic_finetune"
+version = "0.1.0"
+dependencies = []
+requires-python = ">=3.11,<3.14"
+description = "Agentic Fine-tuning Pipeline using NVIDIA NeMo Agent Toolkit"
+
+[project.entry-points.'nat.components']
+agentic_finetune = "agent.register"
+
+[tool.setuptools.packages.find]
+include = ["agent*"]

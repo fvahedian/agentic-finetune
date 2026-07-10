@@ -1,0 +1,9 @@
+.env
+__pycache__/
+*.pyc
+*.egg-info/
+.DS_Store
+eval/results/
+eval/logs/
+serve/__pycache__/
+data/squad_sample.csv
